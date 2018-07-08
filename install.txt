@@ -1,0 +1,19 @@
+1. denso_robot_ros wiki
+http://wiki.ros.org/denso_robot_ros/Tutorials/How%20to%20control%20an%20RC8%20with%20MoveIt%21
+
+2. denso_robot_ros github
+https://github.com/DENSORobot/denso_robot_ros/tree/kinetic-devel
+
+3. install ROS kinectic
+http://wiki.ros.org/kinetic/Installation/Ubuntu
+
+4. moveit api
+http://moveit.ros.org/code-api/
+
+
+cd ~/catkin_iort
+1. roslaunch denso_robot_bringup vs060_bringup.launch
+2. roslaunch src/denso_robot_ros/denso_robot_interface/launch/denso_robot_interface.launch
+3. rosrun my_tf tf_publish
+4. rosrun control_taker control_taker
+5. python src/control_robot_arm/control.py

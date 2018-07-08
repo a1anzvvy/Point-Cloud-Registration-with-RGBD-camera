@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+
+<!-- <remap from="/stereo/camera1/points2" to="/camera/points2" />
+<remap from="/stereo/camera3/points2" to="/camera/points2" />
+<remap from="/stereo/camera4/points2" to="/camera/points2" />
+ -->
+
+<!-- <remap from="/guidance/left/points2" to="/guidance/points2" />
+<remap from="/guidance/right/points2" to="/guidance/points2" /> -->
+
+	<node pkg="octomap_server" type="octomap_server_node" name="octomap_server_1">
+		<param name="resolution" value="0.001" />
+		<!-- fixed map frame (set to 'map' if SLAM or localization running!) -->
+		<param name="frame_id" type="string" value="world" />	
+		<!-- maximum range to integrate (speedup!) -->
+		<param name="sensor_model/max_range" value="10.0" />
+		<!-- data source to integrate (PointCloud2) -->
+		<remap from="cloud_in" to="/Point2_keyboard" />
+		<!-- <remap from="cloud_in" to="/stereo/camera/points2" /> -->
+
+	</node>
+</launch>
